@@ -272,7 +272,7 @@ export default function Home() {
           </p>
           <div className="reel-rail">
             <Reel
-              image="intro-reel.jpeg"
+              image="Intro-reel.jpeg"
               title="Who is Amyth?"
               note="01 / Intro"
             />{" "}
@@ -287,7 +287,7 @@ export default function Home() {
               note="03 / B-BOY PRACTICE"
             />
             <Reel
-              image="stunt tutorial.jpeg"
+              image="stunt-tutorial.jpeg"
               title="Tutorials"
               note="04 / LEARN TRICKS"
             />
