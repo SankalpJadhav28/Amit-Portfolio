@@ -44,7 +44,7 @@ export default function Home() {
 
           <div className="hero-person">
             <img
-              src={asset("AMIT-Hero.png")}
+              src={asset("AMIT-Hero.PNG")}
               alt="Amitkumar Yadav, strength and conditioning coach"
               style={{ objectFit: "contain", objectPosition: "center bottom" }}
             />
