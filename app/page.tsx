@@ -186,7 +186,7 @@ export default function Home() {
             </p>
           </div>
           <div className="proof-grid">
-            <div className="certificate certificate-photo">
+            {/*   <div className="certificate certificate-photo">
               <img
                 src={asset("certificate.jpeg")}
                 alt="Placeholder for Amit's strength and conditioning certificate"
@@ -200,7 +200,19 @@ export default function Home() {
               </h3>
 
               <span>VALID THROUGH 2029</span>
-            </div>
+            </div>*/}
+            <ResultCard
+              image="certificate.jpeg"
+              title={
+                <>
+                  Strength &
+                  <br />
+                  Conditioning Coach.
+                </>
+              }
+              note="NSCA INDIA CERTIFIED"
+              className="result-certificate"
+            />
             <ResultCard
               image="amit client 1.jpeg"
               title={
@@ -211,6 +223,7 @@ export default function Home() {
                 </>
               }
               note="CLIENT JOURNAL / 12 WEEKS"
+              className="result-card"
             />
             <ResultCard
               image="amit client 3.jpeg"
@@ -222,6 +235,7 @@ export default function Home() {
                 </>
               }
               note="CLIENT JOURNAL / 8 WEEKS"
+              className="result-two"
               compact
             />
           </div>
@@ -380,17 +394,18 @@ function ResultCard({
   title,
   note,
   compact = false,
+  className = "",
 }: {
   image: string;
   title: React.ReactNode;
   note: string;
   compact?: boolean;
+  className?: string;
 }) {
   return (
-    <div
-      className={`result-card reveal-image ${compact ? "result-two" : "result-one"}`}
-    >
-      <img src={asset(image)} alt="Placeholder for client training photo" />
+    <div className={`result-card ${compact ? "result-two" : ""} ${className}`}>
+      <img src={asset(image)} alt="" />
+
       <div>
         <b>{title}</b>
         <span>{note}</span>

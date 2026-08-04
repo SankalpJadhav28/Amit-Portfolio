@@ -499,6 +499,9 @@ h1 span {
 .result-two {
   height: 320px;
 }
+.result-certificate {
+  height: 420px;
+}
 .proof-note {
   max-width: 400px;
   font: 10px/1.6 "DM Mono";
@@ -710,9 +713,9 @@ footer a {
     margin-top: 25px;
   }
   .proof-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    gap: 1.5rem;
   }
   .certificate {
     height: 330px;
