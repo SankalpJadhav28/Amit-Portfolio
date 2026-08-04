@@ -27,12 +27,24 @@ export default function Home() {
           <p className="hero-status">
             <i /> AVAILABLE FOR 1:1 COACHING
           </p>
-          <h1 className="hero-name">
-            <span>AMIT</span>KUMAR
-          </h1>
+
+          <div className="hero-title-wrapper">
+            <h1 className="hero-brand">
+              <span>A</span>
+              <span>M</span>
+              <span>Y</span>
+              <span>T</span>
+              <span>H</span>
+            </h1>
+
+            {/*   <div className="hero-subtitle">
+              <span>AMITKUMAR YADAV</span>
+            </div>*/}
+          </div>
+
           <div className="hero-person">
             <img
-              src={asset("AMIT-Hero.PNG")}
+              src={asset("AMIT-Hero.png")}
               alt="Amitkumar Yadav, strength and conditioning coach"
               style={{ objectFit: "contain", objectPosition: "center bottom" }}
             />
@@ -176,25 +188,18 @@ export default function Home() {
           <div className="proof-grid">
             <div className="certificate certificate-photo">
               <img
-                src={asset("certificate-placeholder.svg")}
+                src={asset("certificate.jpeg")}
                 alt="Placeholder for Amit's strength and conditioning certificate"
               />
-              <p>
-                OFFICIAL
-                <br />
-                CERTIFICATION
-              </p>
+              <p>NSCA INDIA CERTIFIED</p>
+
               <h3>
-                STRENGTH
+                Strength &
                 <br />
-                &amp; CONDITIONING
+                Conditioning Coach
               </h3>
-              <div className="seal">
-                S&amp;C
-                <br />
-                <small>CERT.</small>
-              </div>
-              <span>AMYTH · QUALIFIED COACH</span>
+
+              <span>VALID THROUGH 2029</span>
             </div>
             <ResultCard
               image="amit client 1.jpeg"
@@ -275,21 +280,25 @@ export default function Home() {
               image="Intro-reel.jpeg"
               title="Who is Amyth?"
               note="01 / Intro"
+              link="https://www.instagram.com/reel/DZSNsqiuE8Y/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             />{" "}
             <Reel
               image="client-session.jpeg"
               title="Private Session"
               note="02 / CLIENT WORK"
+              link="https://www.instagram.com/reel/DXLrrg4zVsN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             />
             <Reel
               image="bboy-reel.jpeg"
               title="Move Different"
               note="03 / B-BOY PRACTICE"
+              link="https://www.instagram.com/reel/DZpk61rtL5N/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             />
             <Reel
               image="stunt-tutorial.jpeg"
               title="Tutorials"
               note="04 / LEARN TRICKS"
+              link="https://www.instagram.com/reel/DXuH1GMDJsa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             />
           </div>
           <p className="rail-note">
@@ -393,18 +402,15 @@ function Reel({
   image,
   title,
   note,
+  link,
 }: {
   image: string;
   title: string;
   note: string;
+  link: string;
 }) {
   return (
-    <a
-      className="reel-card"
-      href="https://www.instagram.com/iamitkuumar/"
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a className="reel-card" href={link} target="_blank" rel="noreferrer">
       <img src={asset(image)} alt={`Placeholder for ${title} reel`} />
       <span className="play">▶</span>
       <div>

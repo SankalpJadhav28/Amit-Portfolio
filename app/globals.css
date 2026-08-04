@@ -409,50 +409,65 @@ h1 span {
 }
 .certificate {
   height: 410px;
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 24px;
+
   background: var(--ink);
   color: var(--paper);
-  padding: 26px;
-  position: relative;
+
+  padding: 2rem;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+  justify-content: flex-end;
 }
-.certificate:before {
+
+/* Dark overlay */
+.certificate::before {
   content: "";
+
   position: absolute;
-  width: 180px;
-  height: 180px;
-  border: 1px solid var(--acid);
-  border-radius: 50%;
-  right: -60px;
-  top: -70px;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  z-index: 1;
 }
+.certificate::after {
+  display: none;
+}
+
 .certificate p,
 .certificate span {
-  font: 9px "DM Mono";
-  line-height: 1.5;
-  letter-spacing: 0.07em;
-}
-.certificate h3 {
-  font: 600 41px/0.9 Oswald;
-  letter-spacing: -0.05em;
   position: relative;
+  z-index: 2;
+
+  font: 500 0.75rem "DM Mono";
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  opacity: 0.7;
 }
+
+.certificate h3 {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 0.75rem;
+
+  font-size: 2.5rem;
+  line-height: 1;
+
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+/* Remove the seal completely */
+
 .seal {
-  border: 1px solid var(--acid);
-  color: var(--acid);
-  border-radius: 50%;
-  height: 70px;
-  width: 70px;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  font: 600 19px Oswald;
-  line-height: 0.75;
-}
-.seal small {
-  font: 8px "DM Mono";
+  display: none;
 }
 .result-card {
   height: 510px;
@@ -918,22 +933,6 @@ footer a {
   background: #000;
   margin-right: 7px;
 }
-.hero-name {
-  grid-column: 1/4;
-  grid-row: 1;
-  font: 600 clamp(76px, 12.4vw, 190px)/0.76 Oswald;
-  letter-spacing: -0.07em;
-  text-align: center;
-  margin: 7vh 0 0;
-  white-space: nowrap;
-  z-index: 2;
-  pointer-events: none;
-}
-.hero-name span {
-  font-weight: 500;
-  color: #fff;
-  -webkit-text-stroke: 2px #000;
-}
 .hero-person {
   grid-column: 2;
   grid-row: 1/4;
@@ -1067,7 +1066,7 @@ footer a {
     order: 0;
   }
   .hero-name {
-    font-size: clamp(58px, 15vw, 91px);
+    font-size: clamp(5rem, 14vw, 14rem);
     line-height: 0.8;
     margin: 38px -8px 0;
     white-space: normal;
@@ -1140,34 +1139,41 @@ footer a {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 9999;
   pointer-events: none;
   will-change: transform;
+
+  mix-blend-mode: difference;
 }
+
 .cursor-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--acid);
+  width: 8px;
+  height: 8px;
+  background: #fff;
   border-radius: 50%;
-  margin: -3.5px;
+  margin: -4px;
 }
+
 .cursor-ring {
-  width: 31px;
-  height: 31px;
-  border: 1px solid var(--paper);
+  width: 32px;
+  height: 32px;
+
+  border: 1.5px solid #fff;
   border-radius: 50%;
-  margin: -15.5px;
+
+  margin: -16px;
+
   transition:
     width 0.22s ease,
     height 0.22s ease,
     margin 0.22s ease,
-    border-color 0.22s ease;
+    transform 0.22s ease;
 }
+
 .cursor-active .cursor-ring {
   width: 52px;
   height: 52px;
   margin: -26px;
-  border-color: var(--acid);
 }
 .reels {
   background: var(--ink);
@@ -1307,5 +1313,33 @@ footer a {
   }
   .rail-note {
     margin: 0 22px;
+  }
+}
+.hero-title-wrapper {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-brand {
+  font-size: clamp(6rem, 16vw, 18rem);
+  font-weight: 900;
+  letter-spacing: 0.3rem;
+  opacity: 0.2;
+}
+
+.hero-subtitle {
+  margin-top: -2rem;
+  letter-spacing: 0.8rem;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .hero-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.85;
+    font-size: 5rem;
   }
 }
