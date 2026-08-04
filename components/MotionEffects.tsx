@@ -106,13 +106,12 @@ export default function MotionEffects() {
       // FLOATING HERO IMAGE
 
       gsap.to(".hero-person img", {
-        y: -20,
-        duration: 3,
+        y: -1,
+        duration: 6,
         repeat: -1,
         yoyo: true,
-        ease: "sine.inOut",
+        ease: "power1.inOut",
       });
-
       // HEADINGS
 
       gsap.utils
