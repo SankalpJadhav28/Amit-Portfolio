@@ -403,7 +403,9 @@ function ResultCard({
   className?: string;
 }) {
   return (
-    <div className={`result-card ${compact ? "result-two" : ""} ${className}`}>
+    <div
+      className={`result-card reveal-image ${compact ? "result-two" : ""} ${className}`}
+    >
       <img src={asset(image)} alt="" />
 
       <div>
